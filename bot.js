@@ -18,7 +18,11 @@ client.on('message', msg => {
 
 function sendFrog(msg) {
     const froggy = Math.floor(Math.random() * 54) + 1;
-    msg.channel.send(`http://www.allaboutfrogs.org/funstuff/random/00${froggy}.jpg`)
+    if (froggy < 10) {
+        msg.channel.send(`http://www.allaboutfrogs.org/funstuff/random/000${froggy}.jpg`)
+    } else {
+        msg.channel.send(`http://www.allaboutfrogs.org/funstuff/random/00${froggy}.jpg`)
+    }
     msg.react('🐸')
 }
 
